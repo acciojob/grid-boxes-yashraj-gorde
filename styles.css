@@ -1,1 +1,66 @@
-/*  your css code here. If applicable */
+#grid {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr 1fr;  /* left column is wider */
+  grid-template-rows: 
+      120px     /* row 1 */
+      120px     /* row 2 */
+      120px     /* row 3 */
+      120px     /* row 4 */
+      120px;    /* row 5 */
+
+  gap: 10px;
+  padding: 20px;
+}
+
+#grid > div {
+  background: #2f6f1f;
+  color: white;
+  font-size: 30px;
+  padding: 20px;
+}
+
+/* --- Actual layout matching your picture --- */
+
+/* Box 1 - top full width */
+#grid > div:nth-child(1) {
+  grid-column: 1 / span 3;
+}
+
+/* Box 2 - tall left column */
+#grid > div:nth-child(2) {
+  grid-row: 2 / span 4;  /* covers rows 2,3,4,5 */
+}
+
+/* Row 2 */
+#grid > div:nth-child(3) {
+  grid-column: 2;
+}
+#grid > div:nth-child(4) {
+  grid-column: 3;
+}
+
+/* Row 3 */
+#grid > div:nth-child(5) {
+  grid-column: 2 / span 2;
+}
+
+/* Row 4 */
+#grid > div:nth-child(6) {
+  grid-column: 2;
+}
+#grid > div:nth-child(7) {
+  grid-column: 3;
+}
+
+/* Row 5 */
+#grid > div:nth-child(8) {
+  grid-column: 2;
+}
+#grid > div:nth-child(9) {
+  grid-column: 3;
+}
+
+/* Last box spans bottom right big */
+#grid > div:nth-child(10) {
+  grid-column: 1 / span 3;
+}

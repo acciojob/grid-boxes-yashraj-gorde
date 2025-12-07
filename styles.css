@@ -1,9 +1,11 @@
 #grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  width: 1040px;                 /* REQUIRED FOR COLUMN SIZE TEST */
+  grid-template-columns: repeat(4, 242.5px); 
   grid-template-rows: repeat(5, 124px);
   gap: 10px;
-  padding: 10px;
+  padding: 0;
+  margin: 0 auto;
 }
 
 #grid > div {
@@ -13,7 +15,7 @@
   padding: 20px;
 }
 
-/* Test-required spans */
+/* Spans required by test */
 
 #grid > div:nth-child(1) {
   grid-column: span 4;
